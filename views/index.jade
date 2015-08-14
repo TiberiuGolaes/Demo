@@ -7,6 +7,7 @@ html(ng-app="myApp")
 		
 		link(rel='stylesheet', href='js/lib/bootstrap/dist/css/bootstrap.min.css')
 		link(rel='stylesheet', href='css/style.css')
+		link(rel='stylesheet/less', href='style.less')
 
 	body(onselectstart="return false;", ondragstart="return false;", oncontextmenu="return false;")
 		div(ng-view, class="main")
@@ -34,7 +35,7 @@ html(ng-app="myApp")
 	<!-- controllers -->
 	script(src='js/controllers/video-controller.js')
 	script(src='js/controllers/code-controller.js')
+	script(src='js/controllers/aside-controller.js')
 	<!-- filters -->
 	script(src='js/filters/filters.js')
 	<!-- directives -->
-	

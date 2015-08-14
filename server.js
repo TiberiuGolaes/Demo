@@ -18,6 +18,7 @@ var express = require('express'),
 	expressSession = require('express-session'),
 	bodyParser = require('body-parser'),
 	server = http.createServer(app),
+	GitHubApi = require("github"),
 	myModels = require('./node_models/myModel.js'),
 	io = require('socket.io').listen(server);
 
@@ -35,14 +36,9 @@ app.use(expressSession({
 }));
 app.use(express.static(__dirname + '/public'));
 
-// Routes
-app.get('/', routes.index);
-app.get('/partials/:name/', routes.partials);
-//app.get('*', routes.index);
-app.get('/git_repo', function(req, res){
-	var GitHubApi = require("github");
 
-	var github = new GitHubApi({
+//github api
+var github = new GitHubApi({
     	// required
     	version: "3.0.0",
     	// optional
@@ -55,17 +51,38 @@ app.get('/git_repo', function(req, res){
         	"user-agent": "My-Cool-GitHub-App" // GitHub is happy with a unique user agent
     	}
 	});
-	github.authenticate({
-    	type: "basic",
-    	username: "code-review-tool",
-    	password: "codereviewtool1"
-	});
-	github.user.getEmails({
-	    // optional:
+github.authenticate({
+    type: "basic",
+    username: "code-review-tool",
+    password: "codereviewtool1"
+});
+
+// Routes
+app.get('/', routes.index);
+app.get('/partials/:name/', routes.partials);
+//app.get('*', routes.index);
+app.get('/git/get_all_repos', function(req, res){
+	//var GitHubApi = require("github");
+	github.repos.getAll({
 	    // headers: {
 	    //     "cookie": "blahblah"
 	    // },
-    	user: "code-review-tool"
+    	//user: "code-review-tool"
+	}, function(err, res) {
+    	console.log(JSON.stringify(res));
+	});
+});
+
+app.get('/git/pullrequests/getcomments', function(req, res){
+	//var GitHubApi = require("github");
+	github.pullRequests.getComments({
+	    // headers: {
+	    //     "cookie": "blahblah"
+	    // },
+    	//user: "code-review-tool"
+			user: "alexmoldovan",
+			repo: "SimpleJavaJerseyServer",
+			number: "1"
 	}, function(err, res) {
     	console.log(JSON.stringify(res));
 	});
@@ -79,4 +96,3 @@ io.sockets.on('disconnect', function () { console.log("Disconnect!!!");})
 // Start listening on default webserver port or 5000
 server.listen(appPort)
 console.log("Server started on port " + appPort);
-

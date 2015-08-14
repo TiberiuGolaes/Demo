@@ -13,6 +13,7 @@
 	"hammerjs": "*",
 	"underscore": "*",
 	"socket.io-client": "*",
-   	"angular-sanitize": "*"
+    "angular-sanitize": "*",
+    "less": "*"
   }
 }
