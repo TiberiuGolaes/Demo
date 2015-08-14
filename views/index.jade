@@ -4,19 +4,15 @@ html(ng-app="myApp")
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
 		title Code Review
-		
 		link(rel='stylesheet', href='js/lib/bootstrap/dist/css/bootstrap.min.css')
 		link(rel='stylesheet', href='css/style.css')
-
+		link(rel='stylesheet/less', href='style.less')
 	body(onselectstart="return false;", ondragstart="return false;", oncontextmenu="return false;")
 		div(ng-view, class="main")
-
 	<!-- jQuery -->
 	script(src='js/lib/jquery/dist/jquery.min.js')
-
 	<!-- Hammer -->
 	script(src='js/lib/hammerjs/hammer.min.js')
-
 	<!-- angular core -->
 	script(src='js/lib/angular/angular.min.js')
 	script(src='js/lib/angular-route/angular-route.min.js')
@@ -34,7 +30,7 @@ html(ng-app="myApp")
 	<!-- controllers -->
 	script(src='js/controllers/video-controller.js')
 	script(src='js/controllers/code-controller.js')
+	script(src='js/controllers/aside-controller.js')
 	<!-- filters -->
 	script(src='js/filters/filters.js')
 	<!-- directives -->
-	
