@@ -19,8 +19,31 @@ var sock = module.exports = function(socket) {
 	socket.on('buttonClick', function(data) {
 		socket.broadcast.emit('buttonClick', {});
 	});
-
-
+	//
+	socket.on('menuButtonClick',function(data) {
+		socket.broadcast.emit('menuButtonClick', {});
+	});
+	socket.on('menuClose',function(data) {
+		socket.broadcast.emit('menuClose', {});
+	});
+	socket.on('goInformal',function(data) {
+		socket.broadcast.emit('goInformal', {});
+	});
+	socket.on('goIDE',function(data) {
+		socket.broadcast.emit('goIDE', {});
+	});
+	socket.on('menuClose',function(data) {
+		socket.broadcast.emit('goTask', {});
+	});
+	socket.on('menuClose',function(data) {
+		socket.broadcast.emit('goDocs', {});
+	});
+	socket.on('menuClose',function(data) {
+		socket.broadcast.emit('goReview', {});
+	});
+	socket.on('menuClose',function(data) {
+		socket.broadcast.emit('goMenu', {});
+	});
 
 	/** Methods for the video to work */
 	
