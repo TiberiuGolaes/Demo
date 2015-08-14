@@ -59,14 +59,8 @@ github.authenticate({
 
 // Routes
 app.get('/', routes.index);
+app.get('/partials/:name/', routes.partials);
 //app.get('*', routes.index);
-app.get("/informalreview",function(req,res)
-{
-	console.log("We got here");
-	'use strict';
-	res.render('informalreview');
-});
-//app.get('/partials/:name/', routes.partials);
 app.get('/git/get_all_repos', function(req, res){
 	//var GitHubApi = require("github");
 	github.repos.getAll({

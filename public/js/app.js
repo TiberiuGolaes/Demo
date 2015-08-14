@@ -15,10 +15,9 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider',
 		when('/', {
 			templateUrl: 'partials/codereview.html',
 
-		})
-			.
-		when('/informalreview', {
-			templateURL: 'partials/informalreview.html',
+		}).
+		when('/informalreview',{
+			templateURL: 'partials/informalreview.html',	
 		})
 		.
 		otherwise({

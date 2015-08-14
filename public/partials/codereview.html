@@ -1,30 +1,52 @@
- 
+
 <div class='overlay' ng-controller="CodeCtr as code" id="code-canvas" draw knock>
-	<div class='overlay' ng-controller="VideoCtr">
-		<video class='video' ng-src={{trustSrc(stream)}} autoplay="true" id="board-video"></video>
-		<div class="overlay1" ng-controller="asideCtr">
-			<button class="topRight" id="menuButton" ng-click="showMenu($event)">Menu</button>
-		 	<menu visible="rightVisible" alignment="right" class="ng-isolate-scope">
-        		<menu-item hash="first-page" class="ng-scope ng-isolate-scope" ng-click="goFormalReview()">
-					<span class="ng-scope">Formal review</span>
-				</menu-item>
-				<menu-item hash="second-page" class="ng-scope ng-isolate-scope"  ng-click="goTask()">
-					<span class="ng-scope">Task Tracking</span>
-				</menu-item>
-				<menu-item hash="third-page" class="ng-scope ng-isolate-scope"  ng-click="goIDE()">
-					<span class="ng-scope">Text Editor</span>
-				</menu-item>
-            	<menu-item hash="fourth-page" class="ng-scope ng-isolate-scope"  ng-click="goDocs()">
-					<span class="ng-scope">Google Documents</span>
-				</menu-item>
-             	<menu-item hash="fifth-page" class="ng-scope ng-isolate-scope" ng-click="goFormalReview()">
-					<span class="ng-scope">Home</span>
-				</menu-item>
-            	 <menu-item hash="sixth-page" class="ng-scope ng-isolate-scope"  ng-click="goFormalReview()">
-					<span class="ng-scope">Main Menu</span>
-				</menu-item>
-			</menu>
-	     </div>
-	</div>
-	 
+    <div class='overlay' ng-controller="VideoCtr">
+        <video class='video' ng-src={{trustSrc(stream)}} autoplay="true" id="board-video"></video>
+        <div class="overlay1" ng-controller="asideCtr">
+            <button class="topRight" id="menuButton" ng-click="showMenu($event)">Menu</button>
+            <menu visible="rightVisible" alignment="right" class="ng-isolate-scope">
+                <menu-item hash="first-page" class="ng-scope ng-isolate-scope" ng-click="goFormalReview()">
+                    <span class="ng-scope">Formal review</span>
+                </menu-item>
+                <menu-item hash="second-page" class="ng-scope ng-isolate-scope"  ng-click="goTask()">
+                    <span class="ng-scope">Task Tracking</span>
+                </menu-item>
+                <menu-item hash="third-page" class="ng-scope ng-isolate-scope"  ng-click="goIDE()">
+                    <span class="ng-scope">Text Editor</span>
+                </menu-item>
+                <menu-item hash="fourth-page" class="ng-scope ng-isolate-scope"  ng-click="goDocs()">
+                    <span class="ng-scope">Google Documents</span>
+                </menu-item>
+                <menu-item hash="fifth-page" class="ng-scope ng-isolate-scope" ng-click="goFormalReview()">
+                    <span class="ng-scope">Home</span>
+                </menu-item>
+                <menu-item hash="sixth-page" class="ng-scope ng-isolate-scope"  ng-click="goFormalReview()">
+                    <span class="ng-scope">Main Menu</span>
+                </menu-item>
+            </menu>
+            <!-- Button trigger modal -->
+
+            <!-- Modal -->
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<div class="modal" id="informalModal" tabindex="-1" role="dialog" style="width:800px; height:800px;" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="width:800px; height:100px;">
+                <h4 class="modal-title" id="myModalLabel">Pull Requests</h4>
+            </div>
+            <div class="modal-body" style="width:800px; height:600px;">
+                Sa te fut in gura
+            </div>
+            <div class="modal-footer" style="width:800px; height:100px;">
+
+            </div>
+        </div>
+    </div>
 </div>
